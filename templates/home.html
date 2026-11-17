@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+<section class="estudiantes">
+    <article class="tarjeta-estudiante">
+        <img src="{% static 'img/estudiante1.jpg' %}" alt="Estudiante 1">
+        <h3>Salvatore Vallejo </h3>
+        <p>Nivel: Sexto</p>
+    </article>
+
+    <article class="tarjeta-estudiante">
+        <img src="{% static 'img/estudiante2.jpg' %}" alt="Estudiante 2">
+        <h3>Marcelo Lojano </h3>
+        <p>Nivel: Sexto</p>
+    </article>
+
+    <article class="tarjeta-estudiante">
+        <img src="{% static 'img/estudiante3.jpg' %}" alt="Estudiante 3">
+        <h3>Mateo Cantuña </h3>
+        <p>Nivel: Sexto</p>
+    </article>
+
+    <article class="tarjeta-estudiante">
+        <img src="{% static 'img/estudiante4.jpg' %}" alt="Estudiante 4">
+        <h3>Jhonatan Catota </h3>
+        <p>Nivel: Sexto</p>
+    </article>
+
+    <article class="tarjeta-estudiante">
+        <img src="{% static 'img/estudiante5.jpg' %}" alt="Estudiante 5">
+        <h3>Juan Izurieta </h3>
+        <p>Nivel: Sexto</p>
+    </article>
+</section>
+
+<section class="accesos">
+    <article class="tarjeta-acceso">
+        <img src="{% static 'img/docentes.png' %}" alt="Docentes">
+        <h2>Docentes</h2>
+        <p>Nuestro equipo de docentes cuenta con amplia experiencia académica y profesional en las áreas que enseñan.</p>
+        <a class="enlace" href="/docentes/">Ver docentes</a>
+    </article>
+
+    <article class="tarjeta-acceso">
+        <img src="{% static 'img/cursos.png' %}" alt="Cursos">
+        <h2>Cursos</h2>
+        <p>Conoce los cursos disponibles, sus niveles, créditos y jornadas para elegir el que mejor se adapte a ti.</p>
+        <a class="enlace" href="/cursos/">Ver cursos</a>
+    </article>
+</section>
+{% endblock %}

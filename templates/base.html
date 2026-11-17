@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block titulo %}Sitio de oferta de cursos{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <header class="encabezado">
+        <h1>SITIO DE OFERTA DE CURSOS</h1>
+        <nav class="menu">
+            <a href="/">🏠 Home</a>
+            <a href="/docentes/">👨‍🏫 Docentes</a>
+            <a href="/cursos/">📖 Cursos</a>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+        {% block contenido %}{% endblock %}
+    </main>
+</body>
+</html>
