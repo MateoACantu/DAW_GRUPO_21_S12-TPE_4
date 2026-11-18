@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block contenido %}
+<style>
+  .docentes-cab { display:flex; justify-content:space-between; align-items:center; margin:20px 0; }
+  .docentes-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:20px; }
+  .docente-card { border:1px solid #ddd; border-radius:10px; padding:16px; text-align:center; background:#fff; }
+  .docente-card img { width:120px; height:120px; object-fit:cover; border-radius:50%; }
+  .docente-card p { margin:4px 0; font-size:14px; }
+  .docente-acciones { margin-top:10px; font-size:20px; }
+  .docente-acciones a { text-decoration:none; margin:0 8px; }
+  .btn-agregar { padding:8px 16px; background:#F57C00; color:#fff; border-radius:6px; text-decoration:none; }
+</style>
+<div class="docentes-cab">
+  <h2>Nuestro personal</h2>
+  <a class="btn-agregar" href="{% url 'crear_docente' %}">Agregar docente</a>
+</div>
+<div class="docentes-grid">
+  {% for d in docentes %}
+  <div class="docente-card">
+    {% if d.imagen %}<img src="{{ d.imagen.url }}" alt="{{ d }}">{% endif %}
+    <h3>{{ d.nombre }} {{ d.apellido }}</h3>
+    <p>Correo: {{ d.correo }}</p>
+    <p>Cédula: {{ d.cedula }}</p>
+    <p>Tipo de sangre: {{ d.tipo_sangre }}</p>
+    <p>Dirección: {{ d.direccion }}</p>
+    <div class="docente-acciones">
+      <a href="{% url 'editar_docente' d.pk %}" title="Editar">✏️</a>
+      <a href="{% url 'eliminar_docente' d.pk %}" title="Eliminar">🗑️</a>
+    </div>
+  </div>
+  {% empty %}
+  <p>Aún no hay docentes registrados.</p>
+  {% endfor %}
+</div>
+{% endblock %}
